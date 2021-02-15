@@ -10,12 +10,14 @@ screen = Screen()
 screen.colormode(255)
 screen.setup(width=1200, height=600)
 screen.tracer(0)
-screen.title("FroggerZ")
+screen.title("TurtleZ")
 screen.listen()
 print(screen.turtles())
 create_b()
 turtle = Player()
 scoreboard = Scoreboard()
+scoreboard.score()
+scoreboard.instruct()
 screen.onkeypress(turtle.move_u, "Up")
 screen.onkeypress(turtle.move_d, "Down")
 game_is_on = True
@@ -30,7 +32,12 @@ while game_is_on:
 
     if game_over:
         scoreboard.game_over()
-        game_is_on = False
+        replay = screen.textinput("You have Squished our turtle friend", "Type restart to play again, quit to quit:")
+        if replay == "quit":
+            turtle.bye()
+        else:
+            scoreboard.restart()
+            turtle.restart()
 
     if turtle.ycor() > 260:
         scoreboard.lx_score()
