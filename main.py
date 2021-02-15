@@ -18,8 +18,8 @@ turtle = Player()
 scoreboard = Scoreboard()
 scoreboard.score()
 scoreboard.instruct()
-screen.onkeypress(turtle.move_u, "Up")
-screen.onkeypress(turtle.move_d, "Down")
+screen.onkeyrelease(turtle.move_u, "Up")
+screen.onkeyrelease(turtle.move_d, "Down")
 game_is_on = True
 car = CarManager()
 cars = car.create_cars()
@@ -32,12 +32,16 @@ while game_is_on:
 
     if game_over:
         scoreboard.game_over()
-        replay = screen.textinput("You have Squished our turtle friend", "Type restart to play again, quit to quit:")
-        if replay == "quit":
+
+        replay = screen.textinput("You have Squished our turtle friend", "Enter 1 to continue, 2  to quit:")
+
+        if replay == "2":
             turtle.bye()
         else:
+            screen.listen()
             scoreboard.restart()
             turtle.restart()
+
 
     if turtle.ycor() > 260:
         scoreboard.lx_score()

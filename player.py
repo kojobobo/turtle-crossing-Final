@@ -1,5 +1,6 @@
 from turtle import Turtle
 import random
+
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
@@ -20,11 +21,11 @@ class Player(Turtle):
 
     def move_u(self):
         self.forward(20)
-        # print(self.ycor())
+        print(self.ycor())
 
     def move_d(self):
         self.back(20)
-        # print(self.ycor())
+        print(self.ycor())
 
     def restart(self):
         self.goto(STARTING_POSITION)
