@@ -33,14 +33,24 @@ while game_is_on:
     if game_over:
         scoreboard.game_over()
 
-        replay = screen.textinput("You have Squished our turtle friend", "Enter 1 to continue, 2  to quit:")
+        replay = screen.textinput("You have Squished our turtle friend", "Enter 1 to restart, 2 to continue 3 to quit:")
 
-        if replay == "2":
-            turtle.bye()
-        else:
-            screen.listen()
+        if replay == "1":
+
+            car.done()
             scoreboard.restart()
+            car.create_cars()
             turtle.restart()
+            screen.listen()
+
+        elif replay == "2":
+            turtle.restart()
+            scoreboard.gameon()
+            screen.listen()
+
+        else:
+            turtle.bye()
+
 
 
     if turtle.ycor() > 260:

@@ -9,6 +9,8 @@ C_LIST = [(202, 164, 110), (240, 245, 241), (236, 239, 243), (149, 75, 50), (222
 class CarManager(Turtle):
 
     def __init__(self):
+        super().__init__()
+        self.hideturtle()
         self.cars = []
 
     def create_cars(self):
@@ -41,3 +43,7 @@ class CarManager(Turtle):
 
             if car.xcor() < -400:
                 car.setx(400)
+
+    def done(self):
+        for car in self.cars:
+            car.goto(1000,1000)

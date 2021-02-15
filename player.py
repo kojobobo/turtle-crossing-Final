@@ -21,11 +21,14 @@ class Player(Turtle):
 
     def move_u(self):
         self.forward(20)
-        print(self.ycor())
+
 
     def move_d(self):
         self.back(20)
-        print(self.ycor())
+
 
     def restart(self):
         self.goto(STARTING_POSITION)
+
+    def bye(self):
+        self.bye()

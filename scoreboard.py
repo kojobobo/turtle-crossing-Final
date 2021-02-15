@@ -41,4 +41,11 @@ class Scoreboard(Turtle):
         self.color((222, 201, 136))
         self.clear()
         self.instruct()
+        self.l_score = 0
+        self.score()
+
+    def gameon(self):
+        self.color((222, 201, 136))
+        self.clear()
+        self.instruct()
         self.score()
