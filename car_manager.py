@@ -46,4 +46,4 @@ class CarManager(Turtle):
 
     def done(self):
         for car in self.cars:
-            car.goto(1000,1000)
+            car.goto(1000, 1000)
