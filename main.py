@@ -51,8 +51,6 @@ while game_is_on:
         else:
             turtle.bye()
 
-
-
     if turtle.ycor() > 260:
         scoreboard.lx_score()
         car.create_cars()
