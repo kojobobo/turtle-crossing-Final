@@ -17,7 +17,7 @@ create_b()
 turtle = Player()
 scoreboard = Scoreboard()
 scoreboard.score()
-scoreboard.instruct()
+# scoreboard.instruct()
 screen.onkeyrelease(turtle.move_u, "Up")
 screen.onkeyrelease(turtle.move_d, "Down")
 game_is_on = True
@@ -32,11 +32,9 @@ while game_is_on:
 
     if game_over:
         scoreboard.game_over()
-
         replay = screen.textinput("You have Squished our turtle friend", "Enter 1 to restart, 2 to continue 3 to quit:")
 
         if replay == "1":
-
             car.done()
             scoreboard.restart()
             car.create_cars()
@@ -51,7 +49,7 @@ while game_is_on:
         else:
             turtle.bye()
 
-    if turtle.ycor() > 260:
+    if turtle.ycor() > 250:
         scoreboard.lx_score()
         car.create_cars()
         turtle.restart()
